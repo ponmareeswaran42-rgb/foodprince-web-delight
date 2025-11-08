@@ -1,13 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { ChefHat, Clock, Star } from "lucide-react";
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background flex flex-col">
       <Navbar />
       
+      <main className="flex-1">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary/10 via-background to-accent/10 py-20 md:py-32">
         <div className="container mx-auto px-4">
@@ -91,6 +93,9 @@ const Home = () => {
           </Link>
         </div>
       </section>
+      </main>
+
+      <Footer />
     </div>
   );
 };

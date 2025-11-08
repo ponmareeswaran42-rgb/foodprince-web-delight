@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 import { useCart } from "@/contexts/CartContext";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -9,8 +10,8 @@ const Cart = () => {
   const { items, removeItem, updateQuantity, total, clearCart } = useCart();
 
   if (items.length === 0) {
-    return (
-      <div className="min-h-screen bg-background">
+  return (
+    <div className="min-h-screen bg-background flex flex-col">
         <Navbar />
         <div className="container mx-auto px-4 py-16 text-center">
           <h1 className="text-4xl font-bold mb-4">Your Cart is Empty</h1>
@@ -24,9 +25,10 @@ const Cart = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background flex flex-col">
       <Navbar />
       
+      <main className="flex-1">
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold mb-8">Shopping Cart</h1>
         
@@ -107,6 +109,9 @@ const Cart = () => {
           </div>
         </div>
       </div>
+      </main>
+
+      <Footer />
     </div>
   );
 };
